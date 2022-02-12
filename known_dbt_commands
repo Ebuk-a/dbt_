@@ -1,0 +1,5 @@
+dbt run
+dbt run -m model_name
+dbt test -s model_name
+dbt test -s test_name
+dbt docs generate

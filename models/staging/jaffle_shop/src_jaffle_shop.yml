@@ -2,14 +2,15 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: A clone of a Redshift application database.
     database: dev
     schema: jaffle_shop
     tables:
      - name: customers
-       description: Raw customers data
+       description: Raw customers data.
        columns:
          - name: id
-           description: Primary key for customers.
+           description: Primary key for customers data.
            tests:
              - unique
              - not_null
@@ -18,7 +19,7 @@ sources:
        description: Raw orders data.
        columns:
          - name: id
-           description: Primary key for orders.
+           description: Primary key for orders data.
            tests:
              - unique
              - not_null
