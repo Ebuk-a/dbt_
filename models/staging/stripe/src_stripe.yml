@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: stripe
+    description: A clone of a Redshift application database.
+    database: dev
+    schema: stripe
+    tables:
+      - name: payment
+        description: Raw payments data.
