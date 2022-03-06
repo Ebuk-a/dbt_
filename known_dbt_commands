@@ -2,4 +2,68 @@ dbt run
 dbt run -m model_name
 dbt test -s model_name
 dbt test -s test_name
+dbt test --select source:source_name
 dbt docs generate
+dbt source freshness
+
+{%...%}   - statement
+{{...}}   - expression
+{#...#}   - comments
+
+------------------------------
+https://cryptic-cliffs-32040.herokuapp.com/
+Dictionary
+{% set person = {'name': 'me', 'age': 17} %}
+{{ person.age}}
+
+-------------
+List
+{% set person = ['Ebuka', 'me'] %}
+{{ person[0]}}
+
+-------------
+List of Dictionaries
+{% set person = [
+{'name':'Ebuka', 'age': 27},
+{'name':'Ada', 'age': 30}
+]
+%}
+
+{{ person[1].name}}
+
+----------------
+If else statement
+
+{% set temperature = 80 %}
+
+On a day like this, I especially like
+
+{% if temperature > 70 %}
+a refreshing mango sorbet
+
+{% else%}
+a decadent chocolate ice cream.
+
+{% endif%}
+
+---------------
+For loop
+{% set flavours = ['chocolate', 'vanilla', 'strawberry'] %}
+
+{% for flavour in flavours %}
+
+Today I want {{ flavour}} ice cream!
+
+{% endfor %}
+
+----------------
+macros ie functions
+
+{% macro dessert_choice(flavour, dessert = 'ice cream') %}
+
+Today I want {{ flavour}} {{dessert}}!
+
+{% endmacro %}
+
+{{ dessert_choice(flavour = 'chocolate') }}
+------------------------------
